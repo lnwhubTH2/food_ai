@@ -3,8 +3,8 @@ title: Food AI
 emoji: 🍔
 colorFrom: blue
 colorTo: green
-sdk: gradio
-app_file: main.py
+sdk: streamlit
+app_file: web_app.py
 pinned: false
 ---
 
