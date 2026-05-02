@@ -1,0 +1,25 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true # ดึงไฟล์ใหญ่ (LFS) มาด้วย
+
+      - name: Install Git LFS
+        run: git lfs install
+
+      - name: Push to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git remote add hf https://joyjoysad:${HF_TOKEN}@huggingface.co/spaces/joyjoysad/food_ai
+          git push hf main --force

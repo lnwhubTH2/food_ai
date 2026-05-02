@@ -1,0 +1,1892 @@
+{
+    "Baked Potato": {
+        "name_th": "Baked Potato",
+        "cal": 150,
+        "protein": 3,
+        "carbs": 30,
+        "fat": 1
+    },
+    "Bread": {
+        "name_th": "ขนมปัง",
+        "cal": 150,
+        "protein": 3,
+        "carbs": 30,
+        "fat": 1
+    },
+    "Crispy Chicken": {
+        "name_th": "Crispy Chicken",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "Dairy product": {
+        "name_th": "Dairy product",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "Dessert": {
+        "name_th": "Dessert",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "Donut": {
+        "name_th": "Donut",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "Egg": {
+        "name_th": "Egg",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "Fried food": {
+        "name_th": "Fried food",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "Fries": {
+        "name_th": "Fries",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "Green_Curry": {
+        "name_th": "แกงเขียวหวาน",
+        "cal": 300,
+        "protein": 12,
+        "carbs": 15,
+        "fat": 20
+    },
+    "Hot Dog": {
+        "name_th": "Hot Dog",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "Khao_phat": {
+        "name_th": "ข้าวผัด",
+        "cal": 400,
+        "protein": 15,
+        "carbs": 50,
+        "fat": 15
+    },
+    "Khao_soi": {
+        "name_th": "ข้าวซอย",
+        "cal": 400,
+        "protein": 15,
+        "carbs": 50,
+        "fat": 15
+    },
+    "Massaman_Curry": {
+        "name_th": "แกงมัสมั่น",
+        "cal": 300,
+        "protein": 12,
+        "carbs": 15,
+        "fat": 20
+    },
+    "Meat": {
+        "name_th": "Meat",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "Noodles-Pasta": {
+        "name_th": "Noodles-Pasta",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "Phanaeng_Curry": {
+        "name_th": "พะแนง",
+        "cal": 300,
+        "protein": 12,
+        "carbs": 15,
+        "fat": 20
+    },
+    "Phat_kaphrao": {
+        "name_th": "ผัดกะเพรา",
+        "cal": 400,
+        "protein": 15,
+        "carbs": 50,
+        "fat": 15
+    },
+    "Rice": {
+        "name_th": "ข้าวสวย",
+        "cal": 150,
+        "protein": 3,
+        "carbs": 30,
+        "fat": 1
+    },
+    "Roti_canai": {
+        "name_th": "Roti_canai",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "Sandwich": {
+        "name_th": "Sandwich",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "Seafood": {
+        "name_th": "Seafood",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "Soup": {
+        "name_th": "Soup",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "Taco": {
+        "name_th": "Taco",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "Taquito": {
+        "name_th": "Taquito",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "Tom_kha_gai": {
+        "name_th": "ต้มข่าไก่",
+        "cal": 400,
+        "protein": 15,
+        "carbs": 50,
+        "fat": 15
+    },
+    "Tom_yum": {
+        "name_th": "ต้มยำ",
+        "cal": 400,
+        "protein": 15,
+        "carbs": 50,
+        "fat": 15
+    },
+    "Vegetable-Fruit": {
+        "name_th": "Vegetable-Fruit",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "adhirasam": {
+        "name_th": "adhirasam",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "aloo_gobi": {
+        "name_th": "aloo_gobi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "aloo_matar": {
+        "name_th": "aloo_matar",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "aloo_methi": {
+        "name_th": "aloo_methi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "aloo_shimla_mirch": {
+        "name_th": "aloo_shimla_mirch",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "aloo_tikki": {
+        "name_th": "aloo_tikki",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "anarsa": {
+        "name_th": "anarsa",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "apple": {
+        "name_th": "แอปเปิ้ล",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "apple_pie": {
+        "name_th": "apple_pie",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "arepas": {
+        "name_th": "arepas",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "ariselu": {
+        "name_th": "ariselu",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "baby_back_ribs": {
+        "name_th": "baby_back_ribs",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "baklava": {
+        "name_th": "baklava",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "banana": {
+        "name_th": "banana",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "bandar_laddu": {
+        "name_th": "bandar_laddu",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "basundi": {
+        "name_th": "basundi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "beef_carpaccio": {
+        "name_th": "beef_carpaccio",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "beef_tartare": {
+        "name_th": "beef_tartare",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "beet_salad": {
+        "name_th": "beet_salad",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "beetroot": {
+        "name_th": "beetroot",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "beignets": {
+        "name_th": "beignets",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "bell pepper": {
+        "name_th": "bell pepper",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "bhatura": {
+        "name_th": "bhatura",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "bhindi_masala": {
+        "name_th": "bhindi_masala",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "bibimbap": {
+        "name_th": "bibimbap",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "biryani": {
+        "name_th": "biryani",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "boondi": {
+        "name_th": "boondi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "bread_pudding": {
+        "name_th": "bread_pudding",
+        "cal": 150,
+        "protein": 3,
+        "carbs": 30,
+        "fat": 1
+    },
+    "breakfast_burrito": {
+        "name_th": "breakfast_burrito",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "bruschetta": {
+        "name_th": "bruschetta",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "burger": {
+        "name_th": "เบอร์เกอร์",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "butter_chicken": {
+        "name_th": "butter_chicken",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "butter_naan": {
+        "name_th": "butter_naan",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "bánh_mì": {
+        "name_th": "bánh_mì",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "cabbage": {
+        "name_th": "cabbage",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "caesar_salad": {
+        "name_th": "caesar_salad",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "cannoli": {
+        "name_th": "cannoli",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "caprese_salad": {
+        "name_th": "caprese_salad",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "capsicum": {
+        "name_th": "capsicum",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "carrot": {
+        "name_th": "carrot",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "carrot_cake": {
+        "name_th": "carrot_cake",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "cauliflower": {
+        "name_th": "cauliflower",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "ceviche": {
+        "name_th": "ceviche",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "chai": {
+        "name_th": "chai",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "chak_hao_kheer": {
+        "name_th": "chak_hao_kheer",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "cham_cham": {
+        "name_th": "cham_cham",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "chana_masala": {
+        "name_th": "chana_masala",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "chapati": {
+        "name_th": "chapati",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "cheese_plate": {
+        "name_th": "cheese_plate",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "cheesecake": {
+        "name_th": "cheesecake",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "chhena_kheeri": {
+        "name_th": "chhena_kheeri",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "chicken_curry": {
+        "name_th": "chicken_curry",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "chicken_quesadilla": {
+        "name_th": "chicken_quesadilla",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "chicken_razala": {
+        "name_th": "chicken_razala",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "chicken_tikka": {
+        "name_th": "chicken_tikka",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "chicken_tikka_masala": {
+        "name_th": "chicken_tikka_masala",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "chicken_wings": {
+        "name_th": "chicken_wings",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "chikki": {
+        "name_th": "chikki",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "chilli pepper": {
+        "name_th": "chilli pepper",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "chocolate_cake": {
+        "name_th": "chocolate_cake",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "chocolate_mousse": {
+        "name_th": "chocolate_mousse",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "chole_bhature": {
+        "name_th": "chole_bhature",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "churros": {
+        "name_th": "churros",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "clam_chowder": {
+        "name_th": "clam_chowder",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "club_sandwich": {
+        "name_th": "club_sandwich",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "corn": {
+        "name_th": "corn",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "crab_cakes": {
+        "name_th": "crab_cakes",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "creme_brulee": {
+        "name_th": "creme_brulee",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "crepes": {
+        "name_th": "crepes",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "croque_madame": {
+        "name_th": "croque_madame",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "cucumber": {
+        "name_th": "cucumber",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "cup_cakes": {
+        "name_th": "cup_cakes",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "currywurst": {
+        "name_th": "currywurst",
+        "cal": 300,
+        "protein": 12,
+        "carbs": 15,
+        "fat": 20
+    },
+    "daal_baati_churma": {
+        "name_th": "daal_baati_churma",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "daal_puri": {
+        "name_th": "daal_puri",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "dal_makhani": {
+        "name_th": "dal_makhani",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "dal_tadka": {
+        "name_th": "dal_tadka",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "deviled_eggs": {
+        "name_th": "deviled_eggs",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "dharwad_pedha": {
+        "name_th": "dharwad_pedha",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "dhokla": {
+        "name_th": "dhokla",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "donuts": {
+        "name_th": "donuts",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "doodhpak": {
+        "name_th": "doodhpak",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "double_ka_meetha": {
+        "name_th": "double_ka_meetha",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "dum_aloo": {
+        "name_th": "dum_aloo",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "dumplings": {
+        "name_th": "dumplings",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "edamame": {
+        "name_th": "edamame",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "eggplant": {
+        "name_th": "eggplant",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "eggs_benedict": {
+        "name_th": "eggs_benedict",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "empanadas": {
+        "name_th": "empanadas",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "escargots": {
+        "name_th": "escargots",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "falafel": {
+        "name_th": "falafel",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "filet_mignon": {
+        "name_th": "filet_mignon",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "fish_and_chips": {
+        "name_th": "fish_and_chips",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "foie_gras": {
+        "name_th": "foie_gras",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "french_fries": {
+        "name_th": "french_fries",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "french_onion_soup": {
+        "name_th": "french_onion_soup",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "french_toast": {
+        "name_th": "french_toast",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "fried_calamari": {
+        "name_th": "fried_calamari",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "fried_rice": {
+        "name_th": "fried_rice",
+        "cal": 150,
+        "protein": 3,
+        "carbs": 30,
+        "fat": 1
+    },
+    "frozen_yogurt": {
+        "name_th": "frozen_yogurt",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "gajar_ka_halwa": {
+        "name_th": "gajar_ka_halwa",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "garlic": {
+        "name_th": "garlic",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "garlic_bread": {
+        "name_th": "garlic_bread",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "gavvalu": {
+        "name_th": "gavvalu",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "gelato": {
+        "name_th": "gelato",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "ghevar": {
+        "name_th": "ghevar",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "ginger": {
+        "name_th": "ginger",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "gnocchi": {
+        "name_th": "gnocchi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "grapes": {
+        "name_th": "grapes",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "greek_salad": {
+        "name_th": "greek_salad",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "grilled_cheese_sandwich": {
+        "name_th": "grilled_cheese_sandwich",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "grilled_salmon": {
+        "name_th": "grilled_salmon",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "guacamole": {
+        "name_th": "guacamole",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "gulab_jamun": {
+        "name_th": "gulab_jamun",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "gyoza": {
+        "name_th": "gyoza",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "hamburger": {
+        "name_th": "hamburger",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "hot_and_sour_soup": {
+        "name_th": "hot_and_sour_soup",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "hot_dog": {
+        "name_th": "hot_dog",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "huevos_rancheros": {
+        "name_th": "huevos_rancheros",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "hummus": {
+        "name_th": "hummus",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "ice_cream": {
+        "name_th": "ice_cream",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "idli": {
+        "name_th": "idli",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "imarti": {
+        "name_th": "imarti",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "jalebi": {
+        "name_th": "jalebi",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "jalepeno": {
+        "name_th": "jalepeno",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kaathi_rolls": {
+        "name_th": "kaathi_rolls",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kachori": {
+        "name_th": "kachori",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kadai_paneer": {
+        "name_th": "kadai_paneer",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kadhi_pakoda": {
+        "name_th": "kadhi_pakoda",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kajjikaya": {
+        "name_th": "kajjikaya",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kakinada_khaja": {
+        "name_th": "kakinada_khaja",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kalakand": {
+        "name_th": "kalakand",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "karela_bharta": {
+        "name_th": "karela_bharta",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kebab_(shish_kebab)": {
+        "name_th": "kebab_(shish_kebab)",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kiwi": {
+        "name_th": "kiwi",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "kofta": {
+        "name_th": "kofta",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kulfi": {
+        "name_th": "kulfi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "kuzhi_paniyaram": {
+        "name_th": "kuzhi_paniyaram",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "lasagna": {
+        "name_th": "lasagna",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "lassi": {
+        "name_th": "lassi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "ledikeni": {
+        "name_th": "ledikeni",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "lemon": {
+        "name_th": "lemon",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "lettuce": {
+        "name_th": "lettuce",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "litti_chokha": {
+        "name_th": "litti_chokha",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "lobster_bisque": {
+        "name_th": "lobster_bisque",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "lobster_roll_sandwich": {
+        "name_th": "lobster_roll_sandwich",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "lyangcha": {
+        "name_th": "lyangcha",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "maach_jhol": {
+        "name_th": "maach_jhol",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "macaroni_and_cheese": {
+        "name_th": "macaroni_and_cheese",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "macarons": {
+        "name_th": "macarons",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "makki_di_roti_sarson_da_saag": {
+        "name_th": "makki_di_roti_sarson_da_saag",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "malapua": {
+        "name_th": "malapua",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "mango": {
+        "name_th": "mango",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "masala_dosa": {
+        "name_th": "masala_dosa",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "misi_roti": {
+        "name_th": "misi_roti",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "miso_soup": {
+        "name_th": "miso_soup",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "misti_doi": {
+        "name_th": "misti_doi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "modak": {
+        "name_th": "modak",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "momos": {
+        "name_th": "momos",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "mussels": {
+        "name_th": "mussels",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "mysore_pak": {
+        "name_th": "mysore_pak",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "naan": {
+        "name_th": "naan",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "nachos": {
+        "name_th": "nachos",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "navrattan_korma": {
+        "name_th": "navrattan_korma",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "omelette": {
+        "name_th": "omelette",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "onion": {
+        "name_th": "onion",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "onion_rings": {
+        "name_th": "onion_rings",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "orange": {
+        "name_th": "orange",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "oysters": {
+        "name_th": "oysters",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "paani_puri": {
+        "name_th": "paani_puri",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pad_thai": {
+        "name_th": "ผัดไทย",
+        "cal": 400,
+        "protein": 15,
+        "carbs": 50,
+        "fat": 15
+    },
+    "paella": {
+        "name_th": "paella",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pakode": {
+        "name_th": "pakode",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "palak_paneer": {
+        "name_th": "palak_paneer",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pancakes": {
+        "name_th": "pancakes",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "paneer_butter_masala": {
+        "name_th": "paneer_butter_masala",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pani_puri": {
+        "name_th": "pani_puri",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "panna_cotta": {
+        "name_th": "panna_cotta",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "paprika": {
+        "name_th": "paprika",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pav_bhaji": {
+        "name_th": "pav_bhaji",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pear": {
+        "name_th": "pear",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "peas": {
+        "name_th": "peas",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "peking_duck": {
+        "name_th": "peking_duck",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "phirni": {
+        "name_th": "phirni",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pho": {
+        "name_th": "pho",
+        "cal": 400,
+        "protein": 15,
+        "carbs": 50,
+        "fat": 15
+    },
+    "pineapple": {
+        "name_th": "pineapple",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "pithe": {
+        "name_th": "pithe",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pizza": {
+        "name_th": "พิซซ่า",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "pizza_slice": {
+        "name_th": "pizza_slice",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "poha": {
+        "name_th": "poha",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pomegranate": {
+        "name_th": "pomegranate",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "poornalu": {
+        "name_th": "poornalu",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pootharekulu": {
+        "name_th": "pootharekulu",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pork_chop": {
+        "name_th": "pork_chop",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "potato": {
+        "name_th": "potato",
+        "cal": 150,
+        "protein": 3,
+        "carbs": 30,
+        "fat": 1
+    },
+    "poutine": {
+        "name_th": "poutine",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "pretzel": {
+        "name_th": "pretzel",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "prime_rib": {
+        "name_th": "prime_rib",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "pulled_pork_sandwich": {
+        "name_th": "pulled_pork_sandwich",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "qubani_ka_meetha": {
+        "name_th": "qubani_ka_meetha",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "rabri": {
+        "name_th": "rabri",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "raddish": {
+        "name_th": "raddish",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "ramen": {
+        "name_th": "ramen",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "ras_malai": {
+        "name_th": "ras_malai",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "rasgulla": {
+        "name_th": "rasgulla",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "ravioli": {
+        "name_th": "ravioli",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "red_velvet_cake": {
+        "name_th": "red_velvet_cake",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "risotto": {
+        "name_th": "risotto",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "samosa": {
+        "name_th": "samosa",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "samosas": {
+        "name_th": "samosas",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "sandesh": {
+        "name_th": "sandesh",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "sashimi": {
+        "name_th": "sashimi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "scallops": {
+        "name_th": "scallops",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "seaweed_salad": {
+        "name_th": "seaweed_salad",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "shankarpali": {
+        "name_th": "shankarpali",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "shawarma": {
+        "name_th": "shawarma",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "sheer_korma": {
+        "name_th": "sheer_korma",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "sheera": {
+        "name_th": "sheera",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "shrikhand": {
+        "name_th": "shrikhand",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "shrimp_and_grits": {
+        "name_th": "shrimp_and_grits",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "sohan_halwa": {
+        "name_th": "sohan_halwa",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "sohan_papdi": {
+        "name_th": "sohan_papdi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "soy beans": {
+        "name_th": "soy beans",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "spaghetti_bolognese": {
+        "name_th": "spaghetti_bolognese",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "spaghetti_carbonara": {
+        "name_th": "spaghetti_carbonara",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "spinach": {
+        "name_th": "spinach",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "spring_rolls": {
+        "name_th": "spring_rolls",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "steak": {
+        "name_th": "steak",
+        "cal": 250,
+        "protein": 25,
+        "carbs": 0,
+        "fat": 15
+    },
+    "strawberry_shortcake": {
+        "name_th": "strawberry_shortcake",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    },
+    "sushi": {
+        "name_th": "sushi",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "sutar_feni": {
+        "name_th": "sutar_feni",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "sweetcorn": {
+        "name_th": "sweetcorn",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "sweetpotato": {
+        "name_th": "sweetpotato",
+        "cal": 150,
+        "protein": 3,
+        "carbs": 30,
+        "fat": 1
+    },
+    "tacos": {
+        "name_th": "tacos",
+        "cal": 450,
+        "protein": 20,
+        "carbs": 40,
+        "fat": 25
+    },
+    "takoyaki": {
+        "name_th": "takoyaki",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "tiramisu": {
+        "name_th": "tiramisu",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "tomato": {
+        "name_th": "tomato",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "tuna_tartare": {
+        "name_th": "tuna_tartare",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "turnip": {
+        "name_th": "turnip",
+        "cal": 30,
+        "protein": 1,
+        "carbs": 6,
+        "fat": 0
+    },
+    "unni_appam": {
+        "name_th": "unni_appam",
+        "cal": 200,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 8
+    },
+    "waffles": {
+        "name_th": "waffles",
+        "cal": 350,
+        "protein": 4,
+        "carbs": 45,
+        "fat": 18
+    },
+    "watermelon": {
+        "name_th": "watermelon",
+        "cal": 60,
+        "protein": 1,
+        "carbs": 15,
+        "fat": 0
+    }
+}

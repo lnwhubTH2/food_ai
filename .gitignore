@@ -1,0 +1,12 @@
+# แบนโฟลเดอร์รูปภาพและแคช (ห้ามเอาขึ้น!)
+dataset_ready/
+archive/
+my_ultimate_food_vit/
+vit-food101-checkpoints/
+runs/
+__pycache__/
+.pytest_cache/
+venv/
+env/
+
+# ไม่แบน .onnx และ .pt แล้ว เพราะเราจะใช้ LFS แบกขึ้นไปแทน
