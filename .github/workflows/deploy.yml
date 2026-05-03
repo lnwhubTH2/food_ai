@@ -5,19 +5,31 @@ on:
     branches: [ "main" ]
 
 jobs:
-  deploy:
+  test-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-          lfs: true # ดึงไฟล์ใหญ่ (LFS) มาด้วย
+          lfs: true # ดึงไฟล์โมเดลมาด้วยเผื่อใช้ Test
 
-      - name: Install Git LFS
-        run: git lfs install
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-      - name: Push to Hugging Face
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest httpx # ติดตั้งไลบรารีสำหรับเทสต์
+
+      - name: Run Pytest
+        run: |
+          pytest test_main.py -v # สั่งรันเทสต์
+
+      - name: Push to Hugging Face Space
+        if: success() # 🔥 หัวใจสำคัญ: ทำขั้นตอนนี้ก็ต่อเมื่อ pytest ด้านบนรันผ่าน 100% เท่านั้น
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
