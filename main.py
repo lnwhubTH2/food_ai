@@ -31,9 +31,8 @@ class PredictResponse(BaseModel):
 # โหลด YOLO (มันจะโหลดไฟล์ yolo11n.pt มาให้อัตโนมัติถ้ายังไม่มี)
 yolo_model = YOLO("yolo11n.pt") 
 
-## ระบบจะไปหาไฟล์โมเดลจากฐานข้อมูลของ Hugging Face ให้เอง
-model_name = "google/vit-base-patch16-224" 
-# หรือถ้าคุณมีไฟล์ quantized อยู่บน Hub ก็ระบุชื่อได้เลย
+# โหลดโมเดล ViT แบบ ONNX ที่คุณแปลงไว้ (ใส่ชื่อไฟล์ของคุณให้ถูกนะครับ)
+vit_session = ort.InferenceSession("best.onnx")
 # โหลดไฟล์ Classes ที่เราเพิ่งสร้าง
 with open("classes.json", "r", encoding="utf-8") as f:
     classes_list = json.load(f)
@@ -49,7 +48,8 @@ else:
 # 3. ฟังก์ชันเตรียมรูปให้ ViT (Preprocessing)
 # ==========================================
 def preprocess_for_vit(img: Image.Image):
-    img = img.resize((224, 224))
+    img = img.resize((512, 512)) 
+    # ... โค้ดส่วนอื่นปล่อยไว้เหมือนเดิมครับ ...
     
     # แปลงเป็น float32 ให้เรียบร้อยตั้งแต่แรก
     img_data = np.array(img, dtype=np.float32) / 255.0 
@@ -92,9 +92,16 @@ def run_ai_pipeline(image_bytes: bytes) -> dict:
     except (IndexError, KeyError):
         class_name = "Unknown"
 
-    nut_data = nutrition_db.get(class_name, {
-        "calories": 0, "protein": 0.0, "carbs": 0.0, "fat": 0.0
-    })
+    # ดึงข้อมูลจากฐานข้อมูล (ถ้าไม่เจอให้เป็น dict ว่างๆ)
+    raw_nut = nutrition_db.get(class_name, {})
+    
+    # ดึงค่าทีละตัว ถ้าตัวไหนไม่มีในไฟล์ json ให้ใส่ 0 แทน
+    nut_data = {
+        "calories": raw_nut.get("calories", 0),
+        "protein": raw_nut.get("protein", 0.0),
+        "carbs": raw_nut.get("carbs", 0.0),
+        "fat": raw_nut.get("fat", 0.0)
+    }
 
     return {
         "menu_name": class_name,

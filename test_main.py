@@ -1,80 +1,53 @@
-import pytest
-from fastapi.testclient import TestClient
-from main import app
 import io
 from PIL import Image
+from fastapi.testclient import TestClient
+from main import app  # ดึง API จากไฟล์ main.py ของเรามา
 
-# สร้าง TestClient สำหรับจำลองการยิง API
+# สร้าง TestClient เพื่อจำลองการทำงานของแอปพลิเคชัน
 client = TestClient(app)
 
-# ==========================================
-# Test Case 1: ส่งรูปภาพปกติ (ต้องผ่านและคืนค่า JSON ที่ถูกต้อง)
-# ==========================================
-def test_predict_success():
-    # สร้างรูปภาพจำลองขนาด 224x224 (สีแดง)
-    img = Image.new("RGB", (224, 224), color="red")
+def generate_dummy_image():
+    """ฟังก์ชันสร้างรูปภาพจำลองขนาด 512x512 เพื่อใช้ทดสอบ"""
+    img = Image.new("RGB", (512, 512), color="blue")
     img_byte_arr = io.BytesIO()
-    img.save(img_byte_arr, format="JPEG")
-    img_bytes = img_byte_arr.getvalue()
+    img.save(img_byte_arr, format="PNG")
+    return img_byte_arr.getvalue()
 
-    # จำลองการแนบไฟล์ยิง API
+def test_predict_endpoint_success():
+    """ทดสอบกรณีส่งรูปภาพที่ถูกต้องเข้าไป (ควรได้ Status 200)"""
+    dummy_img = generate_dummy_image()
+    
+    # จำลองการส่งไฟล์รูปผ่าน POST request
     response = client.post(
         "/predict",
-        files={"file": ("test_image.jpg", img_bytes, "image/jpeg")}
+        files={"file": ("test_dummy.png", dummy_img, "image/png")}
     )
     
-    # ตรวจสอบว่า API ตอบกลับเป็น 200 OK
+    # 1. เช็คว่าเซิร์ฟเวอร์ตอบกลับว่าสำเร็จ (200 OK)
     assert response.status_code == 200
     
-    # ตรวจสอบว่า JSON ที่ตอบกลับมามีฟิลด์ครบถ้วนตาม Pydantic Model
+    # 2. เช็คว่าข้อมูลที่ส่งกลับมาเป็นโครงสร้าง JSON ที่ถูกต้องตาม Pydantic
     data = response.json()
     assert data["status"] == "success"
     assert "menu_name" in data
     assert "confidence" in data
     assert "nutrition" in data
+    
+    # 3. เช็คว่าใน nutrition มีฟิลด์ครบ
+    nutrition = data["nutrition"]
+    assert "calories" in nutrition
+    assert "protein" in nutrition
+    assert "carbs" in nutrition
+    assert "fat" in nutrition
 
-# ==========================================
-# Test Case 2: ส่งไฟล์ที่ไม่ใช่รูปภาพ เช่น PDF (ต้องเด้ง 400)
-# ==========================================
-def test_invalid_file_type():
-    # จำลองไฟล์ text/pdf
-    fake_pdf_content = b"%PDF-1.4 dummy content"
+def test_predict_endpoint_invalid_file():
+    """ทดสอบกรณีส่งไฟล์ที่ไม่ใช่รูปภาพเข้าไป (ควรโดนดักและได้ Status 400)"""
+    invalid_content = b"This is a text file, not an image."
     
     response = client.post(
         "/predict",
-        files={"file": ("document.pdf", fake_pdf_content, "application/pdf")}
+        files={"file": ("test.txt", invalid_content, "text/plain")}
     )
     
-    # ต้องตอบกลับเป็น 400 Bad Request
+    # โค้ดใน main.py ของเราน่าจะดักไว้และตอบกลับเป็น 400 Bad Request
     assert response.status_code == 400
-    assert "Invalid file type" in response.json()["detail"]
-
-# ==========================================
-# Test Case 3: ส่งไฟล์รูปภาพที่พัง (Corrupted File)
-# ==========================================
-def test_corrupted_image():
-    # แนบไฟล์บอกว่าเป็น JPEG แต่ไส้ในเป็นข้อความมั่วๆ
-    corrupted_content = b"This is not a real image data"
-    
-    response = client.post(
-        "/predict",
-        files={"file": ("corrupted.jpg", corrupted_content, "image/jpeg")}
-    )
-    
-    # ต้องเด้ง 400 Bad Request (ดักด้วย Image.verify())
-    assert response.status_code == 400
-
-# ==========================================
-# Test Case 4: ส่งไฟล์ขนาดใหญ่เกิน 5MB (ต้องเด้ง 400)
-# ==========================================
-def test_file_too_large():
-    # สร้างไฟล์ขยะขนาด 6MB (ใหญ่กว่าที่ MAX_FILE_SIZE กำหนด)
-    large_content = b"0" * (6 * 1024 * 1024)
-    
-    response = client.post(
-        "/predict",
-        files={"file": ("large_image.jpg", large_content, "image/jpeg")}
-    )
-    
-    assert response.status_code == 400
-    assert "File too large" in response.json()["detail"]

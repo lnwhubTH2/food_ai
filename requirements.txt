@@ -5,3 +5,4 @@ python-multipart
 Pillow
 ultralytics
 onnxruntime
+numpy
