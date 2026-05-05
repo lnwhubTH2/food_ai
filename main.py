@@ -146,3 +146,7 @@ async def predict(file: UploadFile = File(...)):
         confidence=result["confidence"],
         nutrition=result["nutrition"]
     )
+if __name__ == "__main__":
+    import uvicorn
+    # บังคับรันที่พอร์ต 7860
+    uvicorn.run(app, host="0.0.0.0", port=7860)
