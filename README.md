@@ -1,3 +1,13 @@
+
+---
+title: Food AI Model
+emoji: 🍔
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
+
 # 🍕 Food Vision API: High-Throughput Image Classification
 
 [![CI/CD Pipeline](https://github.com/joyjoysad/food_ai/actions/workflows/deploy.yml/badge.svg)](https://github.com/joyjoysad/food_ai/actions)
@@ -135,4 +145,5 @@ The system has been load-tested using **Apache JMeter** to identify bottlenecks 
 
 ---
 **Authors:** นาย ชินวัตร ทองสุวรรณ 1650900275  
-**Course:** The MLOps Challenge
+             นาย กิตติภพ สายโย    1650902875 
+
