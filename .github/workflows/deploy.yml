@@ -57,10 +57,13 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Push to Hugging Face Spaces
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          
-          git remote add space https://joyjoysad:[email protected]/spaces/joyjoysad/food_ai
-          git push --force space HEAD:main
+      - name: Verify HF_TOKEN secret exists
+  ...
+- name: Push to Hugging Face Spaces
+  env:
+    HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  run: |
+    git config --global user.email "ci@github.com"
+    git config --global user.name "GitHub Actions CI"
+    git remote remove space 2>/dev/null || true
+    git push --force https://joyjoysad:[email protected]/spaces/joyjoysad/food_ai HEAD:main
