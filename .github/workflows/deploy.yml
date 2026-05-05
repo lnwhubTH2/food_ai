@@ -51,7 +51,7 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Verify HF_TOKEN secret exists
+      - name: Verify HF_TOKEN secret
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
@@ -61,11 +61,48 @@ jobs:
           fi
           echo "HF_TOKEN is set (length: ${#HF_TOKEN})"
 
-      - name: Push to Hugging Face Spaces
+      - name: Install huggingface_hub
+        run: pip install huggingface_hub
+
+      - name: Deploy to Hugging Face Spaces
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git config --global user.email "ci@github.com"
-          git config --global user.name "GitHub Actions CI"
-          git push --force https://joyjoysad:[email protected]/spaces/joyjoysad/food_ai HEAD:main
-          echo "Pushed successfully to Hugging Face Space"
+          python <<'EOF'
+          import os
+          from huggingface_hub import HfApi
+
+          token = os.environ["HF_TOKEN"]
+          api = HfApi(token=token)
+
+          repo_id = "joyjoysad/food_ai"
+          print(f"Uploading to Space: {repo_id}")
+
+          api.upload_folder(
+              folder_path=".",
+              repo_id=repo_id,
+              repo_type="space",
+              commit_message="Auto-deploy from GitHub Actions",
+              ignore_patterns=[
+                  ".git/*",
+                  ".github/*",
+                  ".pytest_cache/*",
+                  "__pycache__/*",
+                  "*.pyc",
+                  "venv/*",
+                  "env/*",
+                  "archive/*",
+                  "dataset_ready/*",
+                  "runs/*",
+                  "vit-food101-checkpoints/*",
+                  "my_ultimate_food_vit/*",
+                  "food_dataset/*",
+                  "test_main.py",
+                  "jmeter/*",
+                  "postman/*",
+                  "*.csv",
+              ]
+          )
+          print("Successfully deployed to Hugging Face Space!")
+          print(f"Visit: https://huggingface.co/spaces/{repo_id}")
+          EOF
