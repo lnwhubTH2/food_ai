@@ -1,6 +1,7 @@
 .git
 .github
 .gitignore
+.gitattributes
 .pytest_cache
 .vscode
 .idea
@@ -16,12 +17,16 @@ venv/
 *.log
 .DS_Store
 Thumbs.db
+
+# Datasets ห้ามเอาขึ้น
 archive/
 dataset_ready/
 vit-food101-checkpoints/
 runs/
-check_*.py
-test_*.py
+my_ultimate_food_vit/
+food_dataset/
+
+# Training & dev scripts (production ไม่ต้องใช้)
 benchmark_model.py
 download_data.py
 export_to_onnx.py
@@ -29,3 +34,19 @@ full_pipeline.py
 quantize_model.py
 split_data.py
 train_model.py
+create_classes.py
+predict_with_info.py
+web_app.py
+
+# Test artifacts
+test_main.py
+jmeter/
+postman/
+
+# Docs/reports
+*.pdf
+docs/
+
+# Large CSV
+food_coded.csv
+*.csv

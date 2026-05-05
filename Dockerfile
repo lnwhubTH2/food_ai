@@ -1,27 +1,35 @@
-# 1. เลือก Base Image เป็น Python 3.10 (เวอร์ชันเล็กกะทัดรัด)
+# ใช้ python slim เพื่อให้ image เล็ก
 FROM python:3.10-slim
 
-# 2. ตั้งค่าโฟลเดอร์ทำงานภายใน Docker
-WORKDIR /app
-
-# 3. ติดตั้ง System Dependencies ที่ YOLO/OpenCV จำเป็นต้องใช้ (สำคัญมาก! ขาดไป YOLO รันไม่ขึ้น)
-# 3. ติดตั้ง System Dependencies (อัปเดตชื่อแพ็กเกจให้เข้ากับ Debian เวอร์ชันใหม่)
-RUN apt-get update && apt-get install -y \
+# ติดตั้ง system deps สำหรับ opencv (ที่ ultralytics ต้องใช้)
+RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1 \
     libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
     && rm -rf /var/lib/apt/lists/*
 
-# 4. ก๊อปปี้ไฟล์ requirements.txt เข้าไปก่อน
-COPY requirements.txt .
+# Hugging Face Spaces ต้องการ user ที่ไม่ใช่ root
+RUN useradd -m -u 1000 user
+USER user
+ENV PATH="/home/user/.local/bin:$PATH"
+ENV HOME=/home/user
 
-# 5. สั่งติดตั้งไลบรารี Python ทั้งหมด
-RUN pip install --no-cache-dir -r requirements.txt
+WORKDIR /app
 
-# 6. ก๊อปปี้ไฟล์โค้ดและโมเดลทั้งหมดของเราเข้าไปใน Docker
-COPY . .
+# Copy requirements ก่อน เพื่อใช้ Docker layer cache
+COPY --chown=user:user requirements.txt .
+RUN pip install --no-cache-dir --user -r requirements.txt
 
-# 7. เปิดพอร์ต 8000 ให้ภายนอกเชื่อมต่อเข้ามาได้
-EXPOSE 8000
+# Copy โค้ดและไฟล์โมเดล
+COPY --chown=user:user . .
 
-# 8. คำสั่งรัน FastAPI ทันทีที่ Container เริ่มทำงาน
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# เปิด port 7860 (Hugging Face Spaces default)
+EXPOSE 7860
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:7860/health')" || exit 1
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860", "--workers", "1"]

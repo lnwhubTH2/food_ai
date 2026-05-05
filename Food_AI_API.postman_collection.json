@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "f00d-a1c0-4ce7-9e2b-001020304050",
+		"name": "Food AI - Classification API",
+		"description": "Postman Collection สำหรับทดสอบ Food Classification API (YOLO11 + ViT ONNX)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Health Check (Root)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/",
+					"host": ["{{base_url}}"],
+					"path": [""]
+				},
+				"description": "ตรวจสอบว่า API ออนไลน์อยู่หรือไม่"
+			},
+			"response": []
+		},
+		{
+			"name": "2. Health Endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/health",
+					"host": ["{{base_url}}"],
+					"path": ["health"]
+				},
+				"description": "Health check endpoint สำหรับ Docker / K8s probe"
+			},
+			"response": []
+		},
+		{
+			"name": "3. Predict - Valid Image (Success Case)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test('Response has menu_name', function () {",
+							"    var json = pm.response.json();",
+							"    pm.expect(json).to.have.property('menu_name');",
+							"    pm.expect(json).to.have.property('confidence');",
+							"    pm.expect(json).to.have.property('nutrition');",
+							"});",
+							"",
+							"pm.test('Confidence is between 0 and 1', function () {",
+							"    var json = pm.response.json();",
+							"    pm.expect(json.confidence).to.be.within(0, 1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/path/to/your/food_image.jpg",
+							"description": "อัปโหลดไฟล์รูปภาพอาหาร (JPEG/PNG/WEBP, ≤ 5MB)"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/predict",
+					"host": ["{{base_url}}"],
+					"path": ["predict"]
+				},
+				"description": "ส่งรูปภาพให้ AI ทำนายเมนูอาหาร + ข้อมูลโภชนาการ"
+			},
+			"response": [
+				{
+					"name": "Success Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{ "key": "file", "type": "file", "src": "" }
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/predict",
+							"host": ["{{base_url}}"],
+							"path": ["predict"]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{ "key": "content-type", "value": "application/json" }
+					],
+					"body": "{\n  \"status\": \"success\",\n  \"menu_name\": \"hamburger\",\n  \"name_th\": \"hamburger\",\n  \"confidence\": 0.9854,\n  \"inference_time_ms\": 65.2,\n  \"nutrition\": {\n    \"calories\": 450,\n    \"protein\": 20.0,\n    \"carbs\": 40.0,\n    \"fat\": 25.0\n  }\n}"
+				}
+			]
+		},
+		{
+			"name": "4. Predict - Invalid File Type (Error 400)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 400', function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/path/to/your/document.pdf",
+							"description": "ทดสอบส่งไฟล์ที่ไม่ใช่รูปภาพ ควรได้ 400"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/predict",
+					"host": ["{{base_url}}"],
+					"path": ["predict"]
+				},
+				"description": "ทดสอบ Error Handling: ไฟล์ผิดประเภท"
+			},
+			"response": []
+		},
+		{
+			"name": "5. Predict - No File (Validation Error 422)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 422', function () {",
+							"    pm.response.to.have.status(422);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}/predict",
+					"host": ["{{base_url}}"],
+					"path": ["predict"]
+				},
+				"description": "ทดสอบ Pydantic validation: ไม่ส่งไฟล์"
+			},
+			"response": []
+		},
+		{
+			"name": "6. Swagger UI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/docs",
+					"host": ["{{base_url}}"],
+					"path": ["docs"]
+				},
+				"description": "เปิด FastAPI Swagger UI"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:7860",
+			"description": "เปลี่ยนเป็น https://joyjoysad-food-ai.hf.space เมื่อทดสอบ Cloud"
+		}
+	]
+}

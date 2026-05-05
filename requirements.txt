@@ -1,8 +1,12 @@
-fastapi
-uvicorn
-pydantic
-python-multipart
-Pillow
-ultralytics
-onnxruntime
-numpy
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+python-multipart==0.0.12
+Pillow==10.4.0
+ultralytics==8.3.0
+onnxruntime==1.19.2
+numpy==1.26.4
+
+# Testing dependencies
+pytest==8.3.3
+httpx==0.27.2

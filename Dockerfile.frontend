@@ -19,11 +19,11 @@ COPY classes.json .
 COPY nutrition.json .
 
 # Expose port
-EXPOSE 8501
+EXPOSE 7860
 
 # Create Streamlit config
 RUN mkdir -p ~/.streamlit
 RUN echo "[server]\nmaxUploadSize = 100\n" > ~/.streamlit/config.toml
 
 # Run Streamlit
-CMD ["streamlit", "run", "web_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "web_app.py", "--server.port=7860", "--server.address=0.0.0.0"]

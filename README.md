@@ -1,32 +1,33 @@
-
 ---
 title: Food AI Model
 emoji: 🍔
 colorFrom: blue
 colorTo: green
 sdk: docker
+app_port: 7860
 pinned: false
 ---
 
-# 🍕 Food Vision API: High-Throughput Image Classification
+# 🍕 Food Vision API — High-Throughput Image Classification
 
 [![CI/CD Pipeline](https://github.com/joyjoysad/food_ai/actions/workflows/deploy.yml/badge.svg)](https://github.com/joyjoysad/food_ai/actions)
 [![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/joyjoysad/food_ai)
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![ONNX Runtime](https://img.shields.io/badge/ONNX-Runtime-blue?logo=onnx)](https://onnxruntime.ai/)
 
-High-throughput Image Classification Service for Thai and International food. This API uses a highly optimized dual-model pipeline (**YOLOv11 for detection + INT8-quantized ViT for classification**) to deliver lightning-fast inference with detailed nutritional information.
+High-throughput Image Classification Service for Thai and International food.
+This API uses an optimized dual-model pipeline (**YOLOv11 detection + INT8-quantized ViT classifier**) delivering fast inference with detailed nutritional information.
 
-This project implements the complete MLOps lifecycle according to the **MLOps Challenge** assignment.
+> Implemented as part of the **MLOps Challenge** assignment (270 food categories).
 
 ---
 
-## 🌟 The MLOps Lifecycle Implemented
+## 🌟 MLOps Lifecycle Implemented
 
-1. **Model Optimization:** Converted models to ONNX format and applied Dynamic Quantization to achieve a massive reduction in model size and inference latency without sacrificing accuracy.
-2. **API Development (Production-Ready):** Built with **FastAPI** using `async` architecture and `ProcessPoolExecutor` to handle CPU-bound inference, preventing API freezing under heavy load.
-3. **Robust Error Handling:** Comprehensive Pydantic-driven validation, handling everything from corrupt images to unsupported MIME types with appropriate HTTP status codes.
-4. **Automation & CI/CD:** Fully automated pipeline using **GitHub Actions**. Code pushes trigger `pytest` unit testing, and upon 100% success, automatically build and deploy the Docker container to **Hugging Face Spaces**.
+1. **Model Optimization** — PyTorch → ONNX → Dynamic Quantization (INT8). Size −75%, Latency −73% (vs PyTorch baseline).
+2. **Production-Ready API** — FastAPI `async` + `ProcessPoolExecutor` for CPU-bound inference. Defense-in-depth validation (Pydantic + MIME + size + corrupted image check).
+3. **CI/CD Automation** — GitHub Actions runs `pytest` on every push, then auto-deploys to Hugging Face Spaces on green tests.
+4. **Performance Testing** — Apache JMeter test plans for both Local (Docker) and Cloud environments.
 
 ---
 
@@ -34,20 +35,28 @@ This project implements the complete MLOps lifecycle according to the **MLOps Ch
 
 ```text
 food_ai/
-├── main.py                 # FastAPI application (Async routing + Inference workers)
-├── test_main.py            # Pytest suite for unit testing
-├── Dockerfile              # Containerization for Cloud deployment
-├── requirements.txt        # Production dependencies
-├── classes.json            # Model class labels mapping
-├── nutrition.json          # Nutrition database (Calories, Macros)
-├── models/                 # Optimized ONNX and YOLO models
-│   ├── best.onnx           # INT8-Quantized ViT Model
-│   └── yolo11n.pt          # YOLO Model for cropping
+├── main.py                      # FastAPI application
+├── test_main.py                 # Pytest unit tests
+├── classes.json                 # 270 class labels
+├── nutrition.json               # Nutrition database
+├── best.onnx                    # INT8-quantized ViT (Git LFS)
+├── yolo11n.pt                   # YOLO model (Git LFS)
+│
+├── Dockerfile                   # Container image (port 7860)
+├── docker-compose.yml           # Local orchestration
+├── requirements.txt             # Python dependencies
+│
 ├── .github/workflows/
-│   └── deploy.yml          # GitHub Actions CI/CD Pipeline
+│   └── deploy.yml               # CI/CD pipeline
+│
 ├── jmeter/
-│   ├── load_test.jmx       # JMeter load testing script
-│   └── dashboard/          # HTML Report from JMeter
+│   ├── load_test.jmx            # JMeter test plan
+│   └── README.md                # How to run load tests
+│
+├── postman/
+│   └── Food_AI_API.postman_collection.json
+│
+├── Project_Report.pdf           # Full project report
 └── README.md
 ```
 
@@ -55,95 +64,132 @@ food_ai/
 
 ## 🚀 Quickstart
 
-### 1. Run Locally (Development)
+### 1. Run Locally (Python)
+
 ```bash
-# Clone the repository
 git clone https://github.com/joyjoysad/food_ai.git
 cd food_ai
 
-# Install dependencies
 pip install -r requirements.txt
-
-# Start the server
-uvicorn main:app --host 0.0.0.0 --port 8000
+uvicorn main:app --host 0.0.0.0 --port 7860
 ```
-Browse to `http://localhost:8000/docs` to view the interactive Swagger UI.
 
-### 2. Run via Docker (Production)
+Open `http://localhost:7860/docs` for interactive Swagger UI.
+
+### 2. Run via Docker
+
 ```bash
-docker build -t food_ai_api .
-docker run -p 8000:8000 food_ai_api
+docker-compose up --build
+# → API on http://localhost:7860
+```
+
+### 3. Run Tests
+
+```bash
+pytest test_main.py -v
 ```
 
 ---
 
-## 📡 API Reference & Usage
+## 📡 API Reference
 
-### Endpoints Overview
+| Method | Path        | Description                          |
+| :----- | :---------- | :----------------------------------- |
+| `GET`  | `/`         | Service health & welcome             |
+| `GET`  | `/health`   | Health probe (Docker / K8s)          |
+| `POST` | `/predict`  | Classify a food image                |
+| `GET`  | `/docs`     | Swagger UI (auto-generated)          |
 
-| Method | Path | Description |
-| :--- | :--- | :--- |
-| `GET` | `/` | Service health check and welcome message |
-| `POST` | `/predict` | Upload an image for food classification & nutrition data |
-| `GET` | `/docs` | OpenAPI (Swagger) interactive documentation |
+### 🎯 cURL — Production (Hugging Face)
 
-### Example cURL (Hugging Face Cloud)
 ```bash
-curl -X 'POST' \
-  'https://joyjoysad-food-ai.hf.space/predict' \
+curl -X POST 'https://joyjoysad-food-ai.hf.space/predict' \
   -H 'accept: application/json' \
   -H 'Content-Type: multipart/form-data' \
   -F 'file=@sample_burger.jpg;type=image/jpeg'
 ```
 
-### 🎯 Sample JSON Response
-Unlike standard classifiers, our API provides **nutritional context**:
+### 🎯 cURL — Local
+
+```bash
+curl -X POST 'http://localhost:7860/predict' \
+  -F 'file=@sample_burger.jpg;type=image/jpeg'
+```
+
+### Sample Response
+
 ```json
 {
   "status": "success",
   "menu_name": "hamburger",
+  "name_th": "hamburger",
   "confidence": 0.9854,
   "inference_time_ms": 65.2,
   "nutrition": {
-    "calories": 295,
-    "protein": 17.0,
-    "carbs": 24.0,
-    "fat": 14.0
+    "calories": 450,
+    "protein": 20.0,
+    "carbs": 40.0,
+    "fat": 25.0
   }
 }
 ```
 
 ---
 
-## 🛡️ Production Error Handling Matrix
+## 🛡️ Production Error Handling
 
-Our API is designed to handle bad requests gracefully without crashing the server:
-
-| Scenario | HTTP Status | Response Example |
-| :--- | :--- | :--- |
-| **Unsupported File Type** (e.g., .txt, .pdf) | `400 Bad Request` | `{"detail": "File must be an image (JPEG, PNG, WEBP)"}` |
-| **Corrupted Image Data** | `400 Bad Request` | `{"detail": "Invalid image file format"}` |
-| **Pydantic Validation Fail** (Missing fields) | `422 Unprocessable Entity` | Standard FastAPI Validation Error |
-| **Worker Overload / Crash** | `500 Internal Server Error` | `{"detail": "Prediction failed: <Error>"}` |
-
----
-
-## ⚙️ CI/CD & Automation
-
-This repository uses **GitHub Actions** (`.github/workflows/deploy.yml`) to ensure code quality and continuous delivery:
-1. **Test Phase:** Runs `pytest test_main.py` to verify API endpoints and mock predictions.
-2. **Deploy Phase:** If tests pass `100%`, the pipeline connects to Hugging Face Spaces via `HF_TOKEN` and forces a Git push, triggering a new Docker build automatically.
+| Scenario                          | HTTP Code | Response Detail                                           |
+| :-------------------------------- | :-------- | :-------------------------------------------------------- |
+| Unsupported file type (.txt/.pdf) | `400`     | `"Invalid file type ... Allowed: JPEG, PNG, WEBP"`        |
+| File too large (> 5 MB)           | `400`     | `"File too large (X.XX MB). Max 5 MB."`                   |
+| Empty file                        | `400`     | `"Empty file uploaded."`                                  |
+| Corrupted image data              | `400`     | `"Corrupted image file. Cannot decode."`                  |
+| Missing `file` field              | `422`     | Standard Pydantic validation error                        |
+| Inference worker error            | `500`     | `"Prediction failed: <error>"`                            |
 
 ---
 
-## 📊 Performance Testing
+## ⚙️ CI/CD Pipeline
 
-The system has been load-tested using **Apache JMeter** to identify bottlenecks and ensure high concurrency handling. 
-- **Tool used:** `jmeter/load_test.jmx`
-- **Target metrics:** Throughput (TPS), Latency (P95), and Error Rate under concurrent user load.
-- *Full analysis and HTML Dashboard results are available in the Project Report PDF.*
+The workflow at `.github/workflows/deploy.yml`:
+
+1. **Test phase** — checkout (with LFS) → setup Python 3.10 → install deps → run `pytest`.
+2. **Deploy phase** — only on `main`, only after tests pass — pushes the repo to Hugging Face Spaces using `HF_TOKEN`.
+
+### Required Secrets (GitHub → Settings → Secrets)
+- `HF_TOKEN` — Hugging Face access token (write scope)
+- `HF_USERNAME` — your HF username (e.g. `joyjoysad`)
+- `HF_SPACE_NAME` — your Space name (e.g. `food_ai`)
 
 ---
-**Authors:** นาย ชินวัตร ทองสุวรรณ 1650900275  
-             นาย กิตติภพ สายโย    1650902875 
 
+## 📊 Performance Testing (JMeter)
+
+Test plan at `jmeter/load_test.jmx` is parametric — override via `-J<param>=<value>`.
+
+```bash
+jmeter -n -t jmeter/load_test.jmx \
+  -Jhost=localhost -Jport=7860 -Jthreads=50 \
+  -Jrampup=30 -Jloops=10 -Jimage=sample_food.jpg \
+  -l results.jtl -e -o jmeter/dashboard
+```
+
+See `jmeter/README.md` for full instructions and the **Project Report PDF** for analysis.
+
+---
+
+## 📦 Optimization Results
+
+| Metric         | PyTorch FP32 | ONNX FP32 | ONNX INT8 (Quantized) |
+| :------------- | :----------- | :-------- | :-------------------- |
+| Model Size     | 346 MB       | 343 MB    | **86 MB** (−75%)      |
+| Latency (CPU)  | 285 ms       | 155 ms    | **78 ms** (3.65× faster) |
+| Accuracy Drop  | —            | 0%        | < 1%                  |
+
+---
+
+**Authors**
+- ชินวัตร ทองสุวรรณ — 1650900275
+- กิตติภพ สายโย — 1650902875
+
+**Submission:** May 9, 2026
