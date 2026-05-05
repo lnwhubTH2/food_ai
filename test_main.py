@@ -1,7 +1,14 @@
 """
 Unit tests for Food Classification API
 Run: pytest test_main.py -v
+
+Note: ตั้ง TESTING=1 ก่อน import app เพื่อใช้ mock pipeline
+       ทำให้ test ไม่ต้องโหลดโมเดลจริง (เร็วกว่า + ไม่ต้องมีไฟล์ .onnx/.pt บน CI)
 """
+import os
+# ⚠️ ต้องตั้งก่อน import main!
+os.environ["TESTING"] = "1"
+
 import io
 from PIL import Image
 from fastapi.testclient import TestClient
@@ -39,7 +46,7 @@ def test_health_endpoint():
 
 
 # ==========================================
-# /predict — Success case
+# /predict — Success case (ใช้ mock)
 # ==========================================
 def test_predict_endpoint_success():
     """ส่งรูป PNG ที่ถูกต้อง → 200 พร้อม schema ครบ"""
@@ -48,18 +55,16 @@ def test_predict_endpoint_success():
         "/predict",
         files={"file": ("test.png", img_bytes, "image/png")}
     )
-    assert response.status_code == 200
+    assert response.status_code == 200, f"Expected 200, got {response.status_code}: {response.text}"
     data = response.json()
     assert data["status"] == "success"
     assert "menu_name" in data
     assert "confidence" in data
     assert "inference_time_ms" in data
     assert "nutrition" in data
-    # nutrition fields
     nut = data["nutrition"]
     for key in ["calories", "protein", "carbs", "fat"]:
         assert key in nut
-    # confidence range
     assert 0 <= data["confidence"] <= 1
 
 
@@ -70,11 +75,11 @@ def test_predict_endpoint_jpeg():
         "/predict",
         files={"file": ("test.jpg", img_bytes, "image/jpeg")}
     )
-    assert response.status_code == 200
+    assert response.status_code == 200, f"Expected 200, got {response.status_code}: {response.text}"
 
 
 # ==========================================
-# /predict — Error cases (400)
+# /predict — Error cases
 # ==========================================
 def test_predict_invalid_file_type():
     """ส่งไฟล์ text → 400"""
