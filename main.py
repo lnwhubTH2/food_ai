@@ -74,7 +74,7 @@ if not TESTING_MODE:
 # 3. Preprocessing
 # ==========================================
 def preprocess_for_vit(img: Image.Image):
-    img = img.resize((224, 224))
+    img = img.resize((512, 512))
     img_data = np.array(img, dtype=np.float32) / 255.0
     mean = np.array([0.485, 0.456, 0.406], dtype=np.float32)
     std = np.array([0.229, 0.224, 0.225], dtype=np.float32)
