@@ -36,7 +36,7 @@ split_data.py
 train_model.py
 create_classes.py
 predict_with_info.py
-web_app.py
+# web_app.py — DO NOT IGNORE (Streamlit frontend ต้องใช้ตอน runtime)
 
 # Test artifacts
 test_main.py
