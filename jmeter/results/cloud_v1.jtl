@@ -1,0 +1,31 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1778020071961,23757,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-2,text,false,Expected HTTP 200,744,332392,10,10,https://joyjoysad-food-ai.hf.space/predict,23754,0,871
+1778020071011,24707,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-1,text,false,Expected HTTP 200,744,332362,10,10,https://joyjoysad-food-ai.hf.space/predict,24704,0,1267
+1778020072959,34112,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-3,text,false,Expected HTTP 200,744,332386,10,10,https://joyjoysad-food-ai.hf.space/predict,34112,0,830
+1778020073959,33112,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-4,text,false,Expected HTTP 200,744,332365,10,10,https://joyjoysad-food-ai.hf.space/predict,33112,0,809
+1778020075959,41031,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-6,text,false,Expected HTTP 200,744,332377,10,10,https://joyjoysad-food-ai.hf.space/predict,41031,0,847
+1778020074960,44423,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-5,text,false,Expected HTTP 200,744,332368,10,10,https://joyjoysad-food-ai.hf.space/predict,44423,0,828
+1778020076960,46910,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-7,text,false,Expected HTTP 200,744,332389,10,10,https://joyjoysad-food-ai.hf.space/predict,46910,0,863
+1778020077959,50400,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-8,text,false,Expected HTTP 200,744,332362,10,10,https://joyjoysad-food-ai.hf.space/predict,50400,0,828
+1778020078960,56314,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-9,text,false,Expected HTTP 200,744,332377,10,10,https://joyjoysad-food-ai.hf.space/predict,56314,0,838
+1778020079959,60231,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-10,text,false,Expected HTTP 200,744,332380,10,10,https://joyjoysad-food-ai.hf.space/predict,60231,0,839
+1778020095721,52958,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-2,text,false,Expected HTTP 200,744,332392,10,10,https://joyjoysad-food-ai.hf.space/predict,52958,0,0
+1778020095721,53036,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-1,text,false,Expected HTTP 200,744,332389,10,10,https://joyjoysad-food-ai.hf.space/predict,53036,0,0
+1778020107072,48394,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-4,text,false,Expected HTTP 200,744,332392,10,10,https://joyjoysad-food-ai.hf.space/predict,48394,0,0
+1778020107072,52103,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-3,text,false,Expected HTTP 200,744,332368,10,10,https://joyjoysad-food-ai.hf.space/predict,52103,0,0
+1778020116991,46691,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-6,text,false,Expected HTTP 200,744,332386,10,10,https://joyjoysad-food-ai.hf.space/predict,46691,0,0
+1778020119384,47690,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-5,text,false,Expected HTTP 200,744,332392,10,10,https://joyjoysad-food-ai.hf.space/predict,47690,0,0
+1778020123872,49555,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-7,text,false,Expected HTTP 200,744,332374,10,10,https://joyjoysad-food-ai.hf.space/predict,49555,0,0
+1778020128361,45065,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-8,text,false,Expected HTTP 200,744,332380,10,10,https://joyjoysad-food-ai.hf.space/predict,45065,0,0
+1778020135275,42120,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-9,text,false,Expected HTTP 200,744,332377,10,10,https://joyjoysad-food-ai.hf.space/predict,42120,0,0
+1778020140192,48213,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-10,text,false,Expected HTTP 200,744,332362,10,10,https://joyjoysad-food-ai.hf.space/predict,48213,0,638
+1778020148757,39649,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-1,text,false,Expected HTTP 200,744,332377,10,10,https://joyjoysad-food-ai.hf.space/predict,39649,0,536
+1778020148680,50249,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-2,text,false,Expected HTTP 200,744,332368,9,9,https://joyjoysad-food-ai.hf.space/predict,50249,0,569
+1778020155466,43463,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-4,text,false,Expected HTTP 200,744,332374,9,9,https://joyjoysad-food-ai.hf.space/predict,43463,0,543
+1778020159176,52787,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-3,text,false,Expected HTTP 200,744,332386,7,7,https://joyjoysad-food-ai.hf.space/predict,52787,0,546
+1778020163682,48395,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-6,text,false,Expected HTTP 200,744,332386,6,6,https://joyjoysad-food-ai.hf.space/predict,48395,0,679
+1778020167075,56959,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-5,text,false,Expected HTTP 200,744,332371,5,5,https://joyjoysad-food-ai.hf.space/predict,56959,0,541
+1778020173428,52679,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-7,text,false,Expected HTTP 200,744,332392,4,4,https://joyjoysad-food-ai.hf.space/predict,52679,0,571
+1778020173428,61804,POST /predict,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Predict Endpoint Users 1-8,text,false,Expected HTTP 200,3258,0,3,3,https://joyjoysad-food-ai.hf.space/predict,0,0,577
+1778020177396,58184,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-9,text,false,Expected HTTP 200,744,332371,2,2,https://joyjoysad-food-ai.hf.space/predict,58184,0,574
+1778020188407,47946,POST /predict,500,Internal Server Error,Predict Endpoint Users 1-10,text,false,Expected HTTP 200,744,332377,1,1,https://joyjoysad-food-ai.hf.space/predict,47946,0,0

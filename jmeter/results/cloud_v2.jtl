@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1778044096644,2970,POST /predict,200,OK,Predict Endpoint Users 1-2,text,true,,659,332386,3,3,https://joyjoysad-food-ai.hf.space/predict,2967,0,1001
+1778044099616,908,POST /predict,200,OK,Predict Endpoint Users 1-2,text,true,,659,332371,3,3,https://joyjoysad-food-ai.hf.space/predict,908,0,0
+1778044098637,3076,POST /predict,200,OK,Predict Endpoint Users 1-3,text,true,,659,332374,3,3,https://joyjoysad-food-ai.hf.space/predict,3076,0,928
+1778044094696,8530,POST /predict,200,OK,Predict Endpoint Users 1-1,text,true,,660,332377,4,4,https://joyjoysad-food-ai.hf.space/predict,8530,0,1310
+1778044101714,1709,POST /predict,200,OK,Predict Endpoint Users 1-3,text,true,,660,332386,4,4,https://joyjoysad-food-ai.hf.space/predict,1709,0,0
+1778044100636,3035,POST /predict,200,OK,Predict Endpoint Users 1-4,text,true,,659,332365,3,3,https://joyjoysad-food-ai.hf.space/predict,3035,0,849
+1778044103227,1003,POST /predict,200,OK,Predict Endpoint Users 1-1,text,true,,658,332392,3,3,https://joyjoysad-food-ai.hf.space/predict,1002,0,0
+1778044103672,744,POST /predict,200,OK,Predict Endpoint Users 1-4,text,true,,659,332365,2,2,https://joyjoysad-food-ai.hf.space/predict,744,0,0
+1778044102636,2432,POST /predict,200,OK,Predict Endpoint Users 1-5,text,true,,659,332383,1,1,https://joyjoysad-food-ai.hf.space/predict,2432,0,825
+1778044105067,601,POST /predict,200,OK,Predict Endpoint Users 1-5,text,true,,659,332383,1,1,https://joyjoysad-food-ai.hf.space/predict,601,0,0

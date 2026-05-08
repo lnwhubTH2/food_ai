@@ -1,0 +1,34 @@
+{
+  "POST /predict" : {
+    "transaction" : "POST /predict",
+    "sampleCount" : 30,
+    "errorCount" : 30,
+    "errorPct" : 100.0,
+    "meanResTime" : 47097.899999999994,
+    "medianResTime" : 48303.5,
+    "minResTime" : 23757.0,
+    "maxResTime" : 61804.0,
+    "pct1ResTime" : 58061.5,
+    "pct2ResTime" : 60938.85,
+    "pct3ResTime" : 61804.0,
+    "throughput" : 0.18144210182530754,
+    "receivedKBytesPerSec" : 0.1466775116122945,
+    "sentKBytesPerSec" : 56.930837861825786
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 30,
+    "errorCount" : 30,
+    "errorPct" : 100.0,
+    "meanResTime" : 47097.899999999994,
+    "medianResTime" : 48303.5,
+    "minResTime" : 23757.0,
+    "maxResTime" : 61804.0,
+    "pct1ResTime" : 58061.5,
+    "pct2ResTime" : 60938.85,
+    "pct3ResTime" : 61804.0,
+    "throughput" : 0.18144210182530754,
+    "receivedKBytesPerSec" : 0.1466775116122945,
+    "sentKBytesPerSec" : 56.930837861825786
+  }
+}

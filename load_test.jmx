@@ -27,6 +27,11 @@
             <stringProp name="Argument.value">${__P(image,sample_food.jpg)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="MIMETYPE" elementType="Argument">
+            <stringProp name="Argument.name">MIMETYPE</stringProp>
+            <stringProp name="Argument.value">${__P(mimetype,image/jpeg)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="THREADS" elementType="Argument">
             <stringProp name="Argument.name">THREADS</stringProp>
             <stringProp name="Argument.value">${__P(threads,50)}</stringProp>
@@ -67,7 +72,7 @@
               <elementProp name="${IMAGE_PATH}" elementType="HTTPFileArg">
                 <stringProp name="File.path">${IMAGE_PATH}</stringProp>
                 <stringProp name="File.paramname">file</stringProp>
-                <stringProp name="File.mimetype">image/jpeg</stringProp>
+                <stringProp name="File.mimetype">${MIMETYPE}</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
