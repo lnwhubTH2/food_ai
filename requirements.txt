@@ -6,6 +6,8 @@ Pillow==10.4.0
 ultralytics==8.3.0
 onnxruntime==1.19.2
 numpy==1.26.4
+streamlit
+requests
 
 # Testing dependencies
 pytest==8.3.3
