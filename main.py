@@ -58,6 +58,17 @@ else:
 yolo_model = None
 vit_session = None
 
+# ==========================================
+# 3. Preprocessing config
+# ==========================================
+# ⚠️ best.onnx จริงๆ เป็น YOLO11 Classification (ไม่ใช่ ViT)
+#   - input shape: [1, 3, 512, 512]
+#   - input name : "images"
+#   - YOLO classify ใช้ rescale 0-1 อย่างเดียว ไม่ normalize ด้วย mean/std
+# ตั้ง default ไว้ก่อน แล้วจะถูก override ตามค่าจริงของ ONNX ตอนโหลด
+CLASSIFIER_INPUT_SIZE = 512
+vit_input_name = "images"
+
 if not TESTING_MODE:
     try:
         from ultralytics import YOLO
@@ -66,22 +77,27 @@ if not TESTING_MODE:
         if os.path.exists("yolo11n.pt"):
             yolo_model = YOLO("yolo11n.pt")
         if os.path.exists("best.onnx"):
-            vit_session = ort.InferenceSession("best.onnx")
+            vit_session = ort.InferenceSession("best.onnx", providers=["CPUExecutionProvider"])
+            # อ่าน metadata จริงจาก ONNX (กันเรา hardcode ผิดถ้า model เปลี่ยน)
+            inp = vit_session.get_inputs()[0]
+            vit_input_name = inp.name
+            shape = inp.shape  # [1, 3, H, W]
+            if isinstance(shape[-1], int):
+                CLASSIFIER_INPUT_SIZE = int(shape[-1])
+            print(f"✅ Loaded best.onnx: input='{vit_input_name}' shape={shape}")
     except Exception as e:
         print(f"⚠️ Model loading failed: {e}")
 
-# ==========================================
-# 3. Preprocessing
-# ==========================================
-def preprocess_for_vit(img: Image.Image):
-    img = img.resize((512, 512))
-    img_data = np.array(img, dtype=np.float32) / 255.0
-    mean = np.array([0.485, 0.456, 0.406], dtype=np.float32)
-    std = np.array([0.229, 0.224, 0.225], dtype=np.float32)
-    img_data = (img_data - mean) / std
-    img_data = np.transpose(img_data, (2, 0, 1))
-    img_data = np.expand_dims(img_data, axis=0)
-    return img_data.astype(np.float32)
+
+def preprocess_for_classifier(img: Image.Image, target_size: int = CLASSIFIER_INPUT_SIZE):
+    img = img.convert("RGB").resize((target_size, target_size), Image.BILINEAR)
+    img_data = np.array(img, dtype=np.float32) / 255.0   # YOLO classify: rescale only
+    img_data = np.transpose(img_data, (2, 0, 1))         # HWC -> CHW
+    img_data = np.expand_dims(img_data, axis=0)          # add batch dim
+    return np.ascontiguousarray(img_data, dtype=np.float32)
+
+# alias เก่ายังใช้ได้
+preprocess_for_vit = preprocess_for_classifier
 
 # ==========================================
 # 4. AI Pipeline (YOLO -> ViT)
@@ -99,14 +115,20 @@ def run_ai_pipeline(image_bytes: bytes) -> dict:
             x1, y1, x2, y2 = map(int, box)
             target_img = img.crop((x1, y1, x2, y2))
 
-    input_data = preprocess_for_vit(target_img)
-    input_name = vit_session.get_inputs()[0].name
-    logits = vit_session.run(None, {input_name: input_data})[0]
+    input_data = preprocess_for_classifier(target_img, target_size=CLASSIFIER_INPUT_SIZE)
+    raw = vit_session.run(None, {vit_input_name: input_data})[0]  # shape: (1, num_classes)
+    row = raw[0]
 
-    exp_logits = np.exp(logits - np.max(logits))
-    probs = exp_logits / exp_logits.sum()
+    # YOLO classify มัก output เป็น probabilities (sum~=1) อยู่แล้ว
+    # ถ้า sum ใกล้ 1 และค่าทุกค่า >=0 ก็ใช้ตรงๆ; ไม่งั้น softmax ก่อน
+    if (row >= 0).all() and 0.95 <= row.sum() <= 1.05:
+        probs = row
+    else:
+        exp_logits = np.exp(row - np.max(row))
+        probs = exp_logits / exp_logits.sum()
+
     class_idx = int(np.argmax(probs))
-    confidence = float(probs[0, class_idx])
+    confidence = float(probs[class_idx])
 
     try:
         class_name = classes_list[str(class_idx)]
